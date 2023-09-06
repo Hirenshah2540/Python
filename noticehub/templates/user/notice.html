@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>All Notices</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'user/css/style.css'%}">
+	<style type="text/css">
+		
+		
+		
+
+		
+}
+
+	</style>
+</head>
+<body>
+	<div class="header">
+		 <!---img src="{% static 'user/images/logo.jpg' %}" height="60" width="130"--->
+         <h1 align="center" >Notice Hub Web App
+         <button style="margin-left: 900px; color:blue; font-size: 24px;"><a href="login">Login</a></button>
+         </h1>
+	</div>
+
+	<div class="content" style="background-color:skyblue">
+		<h1 align="center" style="text-decoration: underline;color: blue">Latest Notices</h1> 
+		{% for row in result %}
+		<div class="notice" style="background-color: silver">
+         <h3>Subject    : {{row.subject}}</h3>
+         <p>Description : {{row.description}}</p>
+         <p>Created_at  : {{row.created_at}}</p>
+         <p>Updated_at  : {{row.updated_at}}</p>
+		</div>
+		{%  endfor %}
+	</div>
+
+	<div class="footer">
+         <h1 align="center">@2023 Notice Hub. All rights reserved</h1>
+	</div>
+
+</body>
+</html>
